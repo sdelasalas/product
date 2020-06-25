@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import {Table, Card, Button, CardTitle, CardText, Row, Col, CardImg, Jumbotron, Container } from 'reactstrap';
+import Countdown from "./Countdown";
 
 //Extend the functionality of 'Component' to the class created
 class Product extends Component {
@@ -31,7 +32,7 @@ handleClick(e){
     let arrnew = this.state.compare.arr;
     let temp = arrnew.indexOf(e.target.id)
     
-    if (temp != -1){
+    if (temp !== -1){
         //if present then remove it
         arrnew.splice(temp, 1)
     }
@@ -48,9 +49,10 @@ render () {
     let temp = []
     let Compare;
     for (var i=0; i<temparr.length; i++){
-        let x= this.state.products.find(prod => prod.id == temparr[i]);
+        let x = this.state.products.find(prod => prod.id === temparr[i]);
         temp.push(x)
     }
+    
     //whatever is returned is what is rendered
     return(
         <>
@@ -87,6 +89,11 @@ render () {
                     </tbody>
                 ))}
             </Table>
+            <Row>
+                <Col className="countDown">
+                <div><Countdown /></div>
+                </Col>
+            </Row>
             </Container>
         </>
     )   
