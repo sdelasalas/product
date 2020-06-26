@@ -1,8 +1,9 @@
 //Import statements go here
 
 import React, { Component } from 'react';
-import {Table, Card, Button, CardTitle, CardText, Row, Col, CardImg, Jumbotron, Container } from 'reactstrap';
-import Countdown from "./Countdown";
+import {Table, Card, Button, CardTitle, Row, Col, Jumbotron, Container } from 'reactstrap';
+import Timer from "./Timer.js";
+
 
 //Extend the functionality of 'Component' to the class created
 class Product extends Component {
@@ -90,8 +91,8 @@ render () {
                 ))}
             </Table>
             <Row>
-                <Col className="countDown">
-                <div><Countdown /></div>
+                <Col className="Timer">
+                <div><Timer /></div>
                 </Col>
             </Row>
             </Container>
